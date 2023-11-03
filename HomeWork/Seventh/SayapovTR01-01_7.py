@@ -10,6 +10,15 @@ def read_last(lines, file):
         print(s[i][:-1])
     return ""
 
+
+try:
+    f = open("article.txt", "x")
+    a = ["Вечерело\n","Жужжали мухи\n","Светил фонарик\n","Кипела вода в чайнике\n","Венера зажглась на небе\n","Деревья шумели\n","Тучи разошлись\n","Листва зеленела\n"]
+    for i in range(8):
+        f.write(a[i])
+    f.close()
+except FileExistsError:
+    print("")
 try:
     print(read_last(int(input("Input number:")), "article.txt"))
 except:
